@@ -1,0 +1,126 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Arial-BoldMT;}
+{\colortbl;\red255\green255\blue255;\red46\green111\blue253;\red127\green127\blue127;\red46\green111\blue253;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c18039\c43529\c99216;\cssrgb\c57046\c57047\c57046;\csgenericrgb\c18039\c43529\c99216;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid2\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww15640\viewh14580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \
+Greetings,\
+\
+Here's some possibly useful information to follow up on my presentation at the 6/9/23 FMDiSC meeting:\
+	
+\f1\b Testing & Monitoring Tools
+\f0\b0 \
+\
+Recording of this presentation:\
+	\cf2 https://www.youtube.com/watch?v=HQkRzhW6zwI\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Contacts_\cf3 xx\cf0 .fmp12 files\
+	open read only by default to Guest\
+	to override, hold down the "Alt" key during launch\
+		
+\f1\b user:  admin\
+		password:  fmdisc230609
+\f0\b0 \
+\
+LambdaTest\
+\pard\pardeftab720\partightenfactor0
+\cf0 	main\
+	\cf2 https://www.lambdatest.com/\cf0 \
+	test suite integrations: Cypress (links to Selenium, Appium and others in left column)\
+	\cf2 https://staging.lambdatestinternal.com/support/docs/getting-started-with-cypress-testing/\cf0 \
+	A Complete Guide To Cross Browser Testing With Cypress\
+	\cf2 https://www.lambdatest.com/learning-hub/cross-browser-testing-with-cypress\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Artillery\
+	- quick way to obtain an FMS token\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl288\slmult1\partightenfactor0
+\ls1\ilvl1\cf0 		1) in an FM file script step, set a variable to a Base64 value...\
+\pard\pardeftab720\sl288\slmult1\partightenfactor0
+\cf0 			
+\f1\b Set Variable  >>  $temp  >>  Base64EncodeRFC ( 3548 ; "username:password" )
+\f0\b0 \
+			...then have the script pause so you can use the Data Viewer to copy the resulting string\
+			...run the script, copy the string and use it in the next step\
+		2) open a Terminal window and run this curl command...\
+			
+\f1\b $ curl -H 'Content-type: application/json' -H 'Authorization: Basic <your Base64 string>' \
+				-X POST -d '\{\}' <path to your hosted file>
+\f0\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 	- Note: it looks like JavaScript can be used in your Artillery .yml config file to automatically do these two steps, \
+		but that was beyond the scope of this presentation\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 	reference\
+	\cf4 https://www.artillery.io/docs/guides/getting-started/installing-artillery\cf0 \
+	Writing Your First Test\
+	\cf4 https://www.artillery.io/docs/guides/getting-started/writing-your-first-test\cf0 \
+	Core Concepts\
+	\cf4 https://www.artillery.io/docs/guides/getting-started/core-concepts\cf0 \
+	main\
+	\cf4 https://www.artillery.io/\cf0 \
+	npmjs\
+	\cf4 https://www.npmjs.com/package/artillery\cf0 \
+	plugins\
+	\cf4 https://www.artillery.io/docs/guides/plugins/plugins-overview\cf0 \
+	Check Your Site\'92s Performance With Artillery and Playwright\
+	\cf4 https://dev-tester.com/check-your-sites-performance-with-artillery-and-playwright/\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Playwright\
+\pard\pardeftab720\partightenfactor0
+\cf0 	main\
+	\cf4 https://playwright.dev/\cf0 \
+	github\
+	\cf4 https://github.com/microsoft/playwright#-playwright\cf0 \
+	LambdaTest:  Playwright End To End Testing Tutorial: A Complete Guide\
+	\cf4 https://www.lambdatest.com/blog/playwright-end-to-end-testing/\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Uptime Kuma\
+\pard\pardeftab720\partightenfactor0
+\cf0 	video:  Meet Uptime Kuma, a Fancy Open Source Uptime Monitor for all your HomeLab Monitoring Needs  (my start)\
+	\cf2 https://www.youtube.com/watch?v=r_A5NKkAqZM\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 	github\
+	\cf4 https://github.com/louislam/uptime-kuma#uptime-kuma\cf0 \
+	Docker Hub\
+	\cf4 https://hub.docker.com/r/louislam/uptime-kuma\cf0 \
+	Meet Uptime Kuma, a Fancy Open Source Uptime Monitor for all your HomeLab Monitoring Needs (copy Compose file here)\
+	\cf4 https://techno-tim.github.io/posts/uptime-kuma/\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Healthchecks (referenced in Q&A at end of presentation)\
+\pard\pardeftab720\partightenfactor0
+\cf0 	How to Monitor Cron Jobs with Healthchecks.io\
+	\cf4 https://healthchecks.io/docs/monitoring_cron_jobs/\cf0 \
+	github: self-hosting package\
+	\cf4 https://github.com/healthchecks/healthchecks\cf0 \
+	main\
+	\cf4 https://healthchecks.io/\cf0 \
+	Running with Docker\
+	\cf4 https://healthchecks.io/docs/self_hosted_docker/\cf0 \
+	pricing  (includes "Hobbyist" free level)\
+\pard\pardeftab720\partightenfactor0
+\cf0 	\cf2 https://healthchecks.io/pricing/\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+'Hope this helps,\
+\
+Patrick Reagan\
+\cf3 Web Apps using React, Express, Postgres\cf0 \
+\
+\cf3 D3Tools\
+Altadena, CA USA\
++01 626/507-8232\
+https://d3.tools\cf0 \
+}

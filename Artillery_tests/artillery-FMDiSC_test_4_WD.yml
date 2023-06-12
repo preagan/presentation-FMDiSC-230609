@@ -1,0 +1,33 @@
+config:
+  target: https://d3tests.top/fmi/webd/Contacts_10K
+  engines:
+    playwright: {}
+  processor: './artillery-FMDiSC_test_5_WD.js'
+  phases:
+    - duration: 120
+      arrivalRate: 1
+      name: 1/sec x 120 sec
+    - pause: 60
+      name: pause 60 #1 of 4
+    - duration: 120
+      arrivalRate: 2
+      name: 2 /sec x 120 sec
+    - pause: 60
+      name: pause 60 #2 of 4
+    - duration: 120
+      arrivalRate: 3
+      name: 3/sec x 120 sec
+    - pause: 60
+      name: pause 60 #3 of 4
+    - duration: 120
+      arrivalRate: 4
+      name: 4/sec x 120 sec
+    - pause: 60
+      name: pause 60 #4 of 4
+    - duration: 120
+      arrivalRate: 5
+      name: 5/sec x 120 sec
+scenarios:
+  - engine: playwright
+    flowFunction: 'wdtest'
+    flow: []

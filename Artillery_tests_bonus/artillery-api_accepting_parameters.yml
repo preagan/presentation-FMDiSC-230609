@@ -1,0 +1,33 @@
+config:
+  environments:
+    staging:
+      target: 'https://yourstagingserver/'
+      phases:
+        - duration: 5
+          arrivalRate: 1
+          rampTo: 20
+          name: staging ramp up
+        - duration: 5
+          arrivalRate: 20
+          name: staging more traffic
+    production:
+      target: 'https://yourproductionserver/'
+      phases:
+        - duration: 5
+          arrivalRate: 1
+          rampTo: 5
+          name: production ramp up
+        - duration: 5
+          arrivalRate: 5
+          name: production a little more traffic
+    local:
+      target: 'http://yourlocalserver/'
+      phases:
+        - duration: 5
+          arrivalRate: 1
+          name: single VU for 20 sec
+scenarios:
+  - flow:
+      - log: 'Current environment is set to: {{ $environment }}'
+      - get:
+          url: '/start'

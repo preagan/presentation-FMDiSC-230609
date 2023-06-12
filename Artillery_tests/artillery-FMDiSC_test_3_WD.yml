@@ -1,0 +1,13 @@
+config:
+  target: https://d3tests.top/fmi/webd/Contacts_100
+  engines:
+    playwright: {}
+  processor: './artillery-FMDiSC_test_3_WD.js'
+  phases:
+    - duration: 5
+      arrivalRate: 2
+      name: 2 per second
+scenarios:
+  - engine: playwright
+    flowFunction: 'wdtest'
+    flow: []

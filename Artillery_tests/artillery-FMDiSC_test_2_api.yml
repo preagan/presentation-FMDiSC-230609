@@ -1,0 +1,40 @@
+config:
+  target: 'https://d3tests.top/fmi/data/v1/databases/Contacts_100/layouts/contact_list_api'
+  phases:
+    - duration: 120
+      arrivalRate: 20
+      name: 20 per second
+    - duration: 120
+      arrivalRate: 40
+      name: 40 per second
+    - duration: 120
+      arrivalRate: 60
+      name: 60 per second
+    - duration: 120
+      arrivalRate: 80
+      name: 80 per second
+    - duration: 120
+      arrivalRate: 100
+      name: 100 per second
+    - duration: 120
+      arrivalRate: 120
+      name: 120 per second
+    - duration: 120
+      arrivalRate: 140
+      name: 140 per second
+    - duration: 120
+      arrivalRate: 160
+      name: 160 per second
+    - duration: 120
+      arrivalRate: 180
+      name: 180 per second
+    - duration: 120
+      arrivalRate: 200
+      name: 200 per second
+scenarios:
+  - flow:
+      - get:
+          url: '/records'
+          headers:
+            content-type: 'application/json'
+            authorization: 'Bearer 09786e24e88f0f9b25bbc1fdb9bab887768df622f6238c4687d0'
